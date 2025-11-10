@@ -1,8 +1,18 @@
+import random
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import torch
 import torch.nn as nn
 import numpy as np
+
+
+# Fijar semillas (Reproducibilidad de los resultados)
+seed = 50
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
 
 # ----------------------
 # Modelo lineal continuo
