@@ -113,7 +113,7 @@ val_loader = DataLoader(val_data, batch_size=128)
 
 
 class MLPModel(nn.Module):
-    def __init__(self, input_dim=5, output_dim=4, hidden=[64, 64, 64]):
+    def __init__(self, input_dim=5, output_dim=4, hidden=[16, 16, 16]):
         super().__init__()
         layers = []
         last = input_dim
@@ -136,7 +136,7 @@ criterion = nn.MSELoss()
 
 # ---------------------------
 # Entrenamiento
-n_epochs = 30  # Suele ser suficiente con buen LR
+n_epochs = 50  # Suele ser suficiente con buen LR
 print(f"Entrenando en {device}...")
 for epoch in range(1, n_epochs+1):
     model.train()
